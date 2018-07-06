@@ -1,20 +1,13 @@
-import gql from "graphql-tag";
 import { Query } from "react-apollo";
+import getUser from "../queries/getUser.graphql";
+import { getUser as GetUserType } from "../queries/__generated__/getUser";
 
-const GET_USER = gql`
-  {
-    user {
-      id
-      name
-    }
-  }
-`;
 const Q: React.ComponentType<{ query: any; ssr?: boolean }> = Query as any;
 
 export default () => {
   return (
-    <Q query={GET_USER} ssr={true}>
-      {props => {
+    <Q query={getUser} ssr={true}>
+      {(props: { loading: boolean; data: GetUserType }) => {
         if (props.loading) {
           return "Loading...";
         }

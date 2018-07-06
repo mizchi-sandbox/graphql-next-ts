@@ -48,3 +48,6 @@ jspm_packages
 # Yarn Integrity file
 .yarn-integrity
 .next
+
+schema.json
+queries/__generated__

@@ -3,7 +3,8 @@
 ## How to use
 
 ```
-npm start
+yarn graphql:build
+yarn start
 ```
 
 - localhost:3000 front
